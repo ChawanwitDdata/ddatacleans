@@ -1,6 +1,9 @@
 ============= dData Cleans ============= \
-Feature \
-- verify_mobile_number \
+Version\
+- v0.0.1 - initial verify telephone and mobile number in Thailand [2024/10/18]
 
+Feature\
+- verify_mobile_number\
 
-v0.0.1 - initial verify telephone and mobile number in Thailand
+Descript\
+ This project made for verify mobile number in Thailand
