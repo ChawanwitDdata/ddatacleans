@@ -38,6 +38,10 @@ jobs:
         pip install build
         pip install phonenumbers
 
+    - name: Set PYTHONPATH
+      run: |
+        echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
+        
     - name: Build package
       run: python -m build
 
