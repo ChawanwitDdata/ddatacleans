@@ -9,7 +9,7 @@ testpaths = [
 
 [project]
 name = "ddatacleans"
-version = "0.0.3"
+version = "0.0.4"
 authors = [
   { name="Chawanwit", email="chawanwit@data.co.th" },
 ]

@@ -1,6 +1,6 @@
 import re
 
-def verify_email(email,column_name):
+def verify_email(email):
     # Regular expression for validating an Email
     regex = r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
 
@@ -8,7 +8,7 @@ def verify_email(email,column_name):
     if email is not None:
         email_cleansing = email.strip().lower()
     else:
-        return {f"{column_name}_cleansing": None, f"{column_name}_reason": f"Invalid: {column_name} no data"}
+        return False
 
     # Remove common leading strings that are not part of the email
     prefixes = ["e-mail:", "email:"]
@@ -21,7 +21,7 @@ def verify_email(email,column_name):
 
     # Check for the presence of '@' symbol
     if email_cleansing.count('@') != 1:
-        return {f"{column_name}_cleansing": email, f"{column_name}_reason": f"Invalid: {column_name} format"}
+        return False
 
     # Remove trailing dots before the domain part
     local, domain = email_cleansing.split('@')
@@ -34,6 +34,6 @@ def verify_email(email,column_name):
 
     # Validate email format using regex
     if re.match(regex, email_cleansing):
-        return {f"{column_name}_cleansing": email_cleansing, f"{column_name}_reason": "Valid"}
+        return True
     else:
-        return {f"{column_name}_cleansing": email, f"{column_name}_reason": f"Invalid: {column_name} format"}
+        return False

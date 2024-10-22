@@ -14,18 +14,18 @@ def profile_mobile_thai(mobileno_th):
     if len(mobileno_th) == 10 :
         if re.findall("[0][8|9|6][0-9]{8}", mobileno_th):
             if mobileno_th.count("0") >= 8:
-                return 'no'
+                return False
             if mobileno_th.count("9") >= 8:
-                return 'no'
+                return False
             y=phonenum("TH", mobileno_th)
             if y[0] == True and y[1] == True:
-                return 'yes'
+                return True
             else:
-                return 'no'
+                return False
         else:
-            return 'no'
+            return False
     else:
-        return "" 
+        return False 
 
 #----- For telephone in Thailand
 def profile_telp_thai(telp_th):
@@ -37,23 +37,23 @@ def profile_telp_thai(telp_th):
     if len(main_number) == 9: 
         if re.findall("[0][2|3|4|5|7][0-9]{7}", main_number):
             if main_number.count("0") >= 7:
-                return 'no'
+                return False
             if main_number.count("9") >= 7:
-                return 'no'
+                return False
             y = phonenum("TH", main_number)
             if y[0] == True and y[1] == True:
-                return telp_th 
+                return True 
             else:
-                return 'no'
+                return False
         else:
-            return 'no'
+            return False
     else:
-        return ""
+        return False
 
 #----- Verify telephone and mobile number in Thailand
 def verify_mobile_number(mobileno):
     result = profile_mobile_thai(mobileno)
-    if result == 'no' or result != 'yes':
+    if not result:
         result = profile_telp_thai(mobileno)
     return result
 

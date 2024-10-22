@@ -1,5 +1,6 @@
 ============= dData Cleans ============= \
 Version
+- v0.0.4 - Update response from verify_mobile_number and verify_email  [2024/10/22]
 - v0.0.3 - add update dependencies [2024/10/22]
 - v0.0.2 - add verify email pattern [2024/10/21]
 - v0.0.1 - initial verify telephone and mobile number in Thailand [2024/10/18]
