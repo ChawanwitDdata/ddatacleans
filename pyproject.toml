@@ -9,13 +9,16 @@ testpaths = [
 
 [project]
 name = "ddatacleans"
-version = "0.0.2"
+version = "0.0.3"
 authors = [
   { name="Chawanwit", email="chawanwit@data.co.th" },
 ]
 description = "ddata cleans "
 readme = "README.md"
 requires-python = ">=3.10"
+dependencies = [
+    "phonenumbers"
+]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
